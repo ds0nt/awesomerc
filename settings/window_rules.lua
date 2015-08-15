@@ -11,15 +11,15 @@ awful.rules.rules = {
                      keys = clientkeys,
                      buttons = clientbuttons } },
         {
-                rule = { class = "Firefox"},
+                rule = { class = "google-chrome-stable"},
                 properties= { tag = tags[1][1] },
         },
         {
-                rule = { class = "Pidgin" },
-                properties = { tag = tags[1][5],
+                rule = { class = "vlc" },
+                properties = { tag = tags[1][6],
                                callback   = awful.client.setslave },
         },
-        { 
+        {
                 rule = { instance = "plugin-container"},
                 properties = { floating = true } },
         {

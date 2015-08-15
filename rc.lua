@@ -2,15 +2,19 @@
 -- Author: Tomas Pruzina (tomas.pruzina@gmail.com)
 -- Description: Awesome config, tested on Gentoo's awesome 3.5.1
 
--- Standard awesome library
+-- Standard awesome library --
 local gears = require("gears")
 awful = require("awful")
 awful.rules = require("awful.rules")
 require("awful.autofocus")
+
 -- Widget and layout library
+
 local wibox = require("wibox")
+
 -- Theme handling library
 local beautiful = require("beautiful")
+
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
@@ -21,10 +25,13 @@ local myro  = require("myrc.run_once")  -- run app as long it's not running alre
 --local myerr = require("myrc.error")     -- error reporting
 
 -- VARIABLES
-terminal = "urxvt"
+terminal = "xfce4-terminal"
 editor = "vim"
 editor_cmd = terminal .. " -e " .. editor
 configpath="/home/"..os.getenv("USER").."/.config/awesome/"
+
+klouds = "xfce4-terminal --command='bash --rcfile /code/klouds/.bashrc-klouds'"
+lafuzz = "xfce4-terminal --drop-down --fullscreen --command='bash -tc \"cd /code; subl3 `fzf`\"'"
 
 -- THEME
 -- default theme
@@ -72,7 +79,7 @@ require("settings.startup")
 -------------------------------- PLUGIN SECTION ------------------------
 
 --Logger
---dependencies: http://awesome.naquadah.org/wiki/Naughty_log_watcher 
+--dependencies: http://awesome.naquadah.org/wiki/Naughty_log_watcher
 --local lognotify = require("lognotify")
 
 
@@ -87,4 +94,3 @@ require("settings.startup")
 
 -- wallpaper snippet
 --local mywp = require("settings.wallpaper")
-
