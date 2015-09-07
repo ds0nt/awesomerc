@@ -2,18 +2,14 @@ local awful = require("awful")
 
 -- GLOBAL KEYBINDINGS
 globalkeys = awful.util.table.join(globalkeys,
-    --MULTIMEDIA KEYS
+
     awful.key({ modkey, "Shift" }, "KP_End", function () awful.util.spawn(klouds) end),
     awful.key({ modkey, "Shift" }, "KP_Begin", function () awful.util.spawn(lafuzz) end),
-    -- awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn(lower_volume_cmd) end),
-    -- awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn(brightness_cmd .. "-inc 10") end),
-    -- awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn(brightness_cmd .. " -dec 10") end),
-    -- awful.key({ }, "XF86AudioMute", function () awful.util.spawn(mute_cmd) end),
-    -- awful.key({ }, "XF86Launch4", function () awful.util.spawn(hibernate_cmd) end),
+    awful.key({ modkey }, "KP_Down", function () awful.util.spawn("xfce4-screenshooter") end),
+    awful.key({ modkey, "Shift" }, "KP_Down", function () awful.util.spawn("xfce4-screenshooter --region") end),
 
-    --PROMPT EXECUTE
     awful.key({ modkey },            "`",     function () mypromptbox[mouse.screen]:run() end),
-    --MOD+TAB -- instead of switching to last client, rotate trough all clients
+
     awful.key({ modkey }, "Tab",
         function ()
             awful.client.focus.byidx(1)
@@ -30,5 +26,4 @@ clientkeys = awful.util.table.join(clientkeys,
 )
 
 -- CLIENT BUTTONS BINDINGS
---clientbuttons = awful.util.table.join(clientbuttons
---)
+clientbuttons = awful.util.table.join(clientbuttons)

@@ -26,20 +26,16 @@ local myro  = require("myrc.run_once")  -- run app as long it's not running alre
 
 -- VARIABLES
 terminal = "xfce4-terminal"
-editor = "vim"
+editor = "mousepad"
 editor_cmd = terminal .. " -e " .. editor
 configpath="/home/"..os.getenv("USER").."/.config/awesome/"
 
-klouds = "xfce4-terminal --command='bash --rcfile /code/klouds/.bashrc-klouds'"
-lafuzz = "xfce4-terminal --drop-down --fullscreen --command='bash -tc \"cd /code; subl3 `fzf`\"'"
+klouds = "bash -c klouds-bash"
+lafuzz = "bash -c fuzzy-search"
 
 -- THEME
 -- default theme
-beautiful.init("/usr/share/awesome/themes/default/theme.lua")
-
--- CUSTOM THEMES - pick name from themes/
---local theme = "zenburn-custom"
---beautiful.init(configpath .. "/themes/" .. theme ..  "/theme.lua")
+beautiful.init(awful.util.getdir("config") .. "/themes/current_theme/theme.lua")
 
 
 -- KEYBINDED COMMANDS (see settings/custom_binds.lua)
@@ -93,4 +89,4 @@ require("settings.startup")
 
 
 -- wallpaper snippet
---local mywp = require("settings.wallpaper")
+local mywp = require("settings.wallpaper")
